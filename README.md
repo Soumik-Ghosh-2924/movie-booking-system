@@ -20,8 +20,6 @@ Docker
 
 # API Endpoints for Cinema Booking System
 
-# API Endpoints for Cinema Booking System
-
 ## Movie Endpoints
 
 ### 1. Get All Movies
