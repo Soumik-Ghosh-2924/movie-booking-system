@@ -20,10 +20,12 @@ Docker
 
 # API Endpoints for Cinema Booking System
 
+# API Endpoints for Cinema Booking System
+
 ## Movie Endpoints
 
 ### 1. Get All Movies
-**Endpoint:** GET /movie  
+**Endpoint:** `GET /movie`  
 **Description:** Retrieves a list of all movies. Supports filtering by title, date, location, and genre.  
 **Query Parameters (Optional):**
 - `title` (String): Filter movies by title.
@@ -36,20 +38,20 @@ Docker
 ---
 
 ### 2. Get Movie by ID
-**Endpoint:** GET /movie/{id}  
+**Endpoint:** `GET /movie/{id}`  
 **Description:** Retrieves details of a specific movie by its ID.  
 **Path Parameter:**
-- id (Integer): The ID of the movie.  
+- `id` (Integer): The ID of the movie.  
 
 **Response:** Returns the details of the specified movie.
 
 ---
 
 ### 3. Add a Movie
-**Endpoint:** POST /movie  
+**Endpoint:** `POST /movie`  
 **Description:** Adds a new movie to the database.  
 **Request Body:**  
-json
+```json
 {
   "title": "String",
   "director": "String",
@@ -60,19 +62,19 @@ json
   "totalSeats": "Integer",
   "price": "Integer"
 }
-
+```  
 **Response:** Confirms that the movie has been added.
 
 ---
 
 ### 4. Update a Movie
-**Endpoint:** PUT /movie/{movieId}  
+**Endpoint:** `PUT /movie/{movieId}`  
 **Description:** Updates the details of an existing movie.  
 **Path Parameter:**
-- movieId (Integer): The ID of the movie to be updated.  
+- `movieId` (Integer): The ID of the movie to be updated.  
 
 **Request Body:**  
-json
+```json
 {
   "title": "String",
   "director": "String",
@@ -83,16 +85,16 @@ json
   "totalSeats": "Integer",
   "price": "Integer"
 }
-  
+```  
 **Response:** Confirms that the movie details have been updated.
 
 ---
 
 ### 5. Delete a Movie
-**Endpoint:** DELETE /movie/{movieId}  
+**Endpoint:** `DELETE /movie/{movieId}`  
 **Description:** Deletes a specific movie by its ID.  
 **Path Parameter:**
-- movieId (Integer): The ID of the movie to be deleted.  
+- `movieId` (Integer): The ID of the movie to be deleted.  
 
 **Response:** Confirms that the movie has been deleted.
 
@@ -101,26 +103,27 @@ json
 ## Booking Endpoints
 
 ### 6. Book Tickets for a Movie
-**Endpoint:** POST /movie/booking/{movieId}/{quantity}/{totalPrice}  
+**Endpoint:** `POST /movie/booking/{movieId}/{quantity}/{totalPrice}`  
 **Description:** Books tickets for a specific movie.  
 **Path Parameters:**
-- movieId (Integer): The ID of the movie to book tickets for.
-- quantity (Integer): The number of tickets to book.
-- totalPrice (Integer): The total price of the tickets.  
+- `movieId` (Integer): The ID of the movie to book tickets for.
+- `quantity` (Integer): The number of tickets to book.
+- `totalPrice` (Integer): The total price of the tickets.  
 
 **Response:** Confirms that the booking has been completed.
 
 ---
 
 ### 7. View Booking History
-**Endpoint:** GET /movie/booking/history  
+**Endpoint:** `GET /movie/booking/history`  
 **Description:** Retrieves the history of previous bookings.  
 **Response:** Returns a list of all previous bookings.
 
 ---
 
 ## Response Formats
-- **Success:** 200 OK, along with the requested data or a confirmation message.
-- **Error:** Appropriate HTTP status codes (e.g., 404 Not Found, 400 Bad Request).
+- **Success:** `200 OK`, along with the requested data or a confirmation message.
+- **Error:** Appropriate HTTP status codes (e.g., `404 Not Found`, `400 Bad Request`).
 
 ---
+```
