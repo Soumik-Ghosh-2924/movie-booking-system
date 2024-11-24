@@ -1,4 +1,4 @@
-package com.cinema_package.cinema_project.models;
+package com.institutional.moviebookingsystem.models;
 
 import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;

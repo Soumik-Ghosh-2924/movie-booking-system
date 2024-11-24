@@ -1,10 +1,10 @@
-package com.cinema_package.cinema_project.service;
-import com.cinema_package.cinema_project.models.Prevbookhistory;
-import com.cinema_package.cinema_project.models.Movie;
-import com.cinema_package.cinema_project.models.LatestMovReq;
-
+package com.institutional.moviebookingsystem.service;
 import java.time.LocalDate;
 import java.util.List;
+
+import com.institutional.moviebookingsystem.models.BookingHistory;
+import com.institutional.moviebookingsystem.models.Movie;
+import com.institutional.moviebookingsystem.models.NewMovieRequest;
 
 public interface IMService 
 {
@@ -15,14 +15,14 @@ public interface IMService
 
     public Movie getMovieById(Integer id);
 
-    public List<Prevbookhistory> getBookingHistory();
+    public List<BookingHistory> getBookingHistory();
 
     public void bookTickets(Integer id, Integer tickets, Integer payment);
 
-    public void addMovie(LatestMovReq request);
+    public void addMovie(NewMovieRequest request);
 
     public void deleteMovie(Integer id);
 
-    public void updateMovie(Integer id, LatestMovReq request);
+    public void updateMovie(Integer id, NewMovieRequest request);
 }
 

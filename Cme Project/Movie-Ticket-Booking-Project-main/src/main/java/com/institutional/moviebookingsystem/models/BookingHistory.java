@@ -1,8 +1,8 @@
-package com.cinema_package.cinema_project.models;
+package com.institutional.moviebookingsystem.models;
 
 import java.time.LocalDate;
 
-public class Prevbookhistory {
+public class BookingHistory {
         private int id;
         private String title;
         private String director;
@@ -15,7 +15,7 @@ public class Prevbookhistory {
 
 
 
-    public Prevbookhistory(int id, String title, String director, String description, String genre, LocalDate date, String location, int bookedTickets, int totalPrice) {
+    public BookingHistory(int id, String title, String director, String description, String genre, LocalDate date, String location, int bookedTickets, int totalPrice) {
         this.id = id;
         this.title = title;
         this.director = director;
@@ -27,7 +27,7 @@ public class Prevbookhistory {
         this.totalPrice = totalPrice;
     }
 
-    public Prevbookhistory() {}
+    public BookingHistory() {}
 
         public int getId() {return id;}
 

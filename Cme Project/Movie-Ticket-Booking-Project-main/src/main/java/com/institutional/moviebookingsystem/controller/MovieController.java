@@ -1,13 +1,13 @@
-package com.cinema_package.cinema_project.controller;
+package com.institutional.moviebookingsystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import com.cinema_package.cinema_project.models.Prevbookhistory;
-import com.cinema_package.cinema_project.models.Movie;
-import com.cinema_package.cinema_project.models.LatestMovReq;
-import com.cinema_package.cinema_project.service.MovieService;
+import com.institutional.moviebookingsystem.models.BookingHistory;
+import com.institutional.moviebookingsystem.models.Movie;
+import com.institutional.moviebookingsystem.models.NewMovieRequest;
+import com.institutional.moviebookingsystem.service.MovieService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -44,7 +44,7 @@ public class MovieController {
     
     
     @GetMapping("/movie/booking/history")
-    public List<Prevbookhistory> getBookingHistory(){
+    public List<BookingHistory> getBookingHistory(){
     	
     	System.out.println("Here's your booking history");
     	
@@ -57,7 +57,7 @@ public class MovieController {
     
     
     @PostMapping("/movie")
-    public String addMovie(@RequestBody LatestMovReq movie) {
+    public String addMovie(@RequestBody NewMovieRequest movie) {
         movieService.addMovie(movie);
         
         return "The movie has been added.";
@@ -92,7 +92,7 @@ public class MovieController {
     
     
     @PutMapping("/movie/{movieId}")
-    public String updateMovie(@PathVariable("movieId") Integer id, @RequestBody LatestMovReq movie) 
+    public String updateMovie(@PathVariable("movieId") Integer id, @RequestBody NewMovieRequest movie) 
     {
         movieService.updateMovie(id, movie);
         

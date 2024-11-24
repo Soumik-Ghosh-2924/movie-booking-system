@@ -1,8 +1,8 @@
-package com.cinema_package.cinema_project.models;
+package com.institutional.moviebookingsystem.models;
 
 import java.time.LocalDate;
 
-public class LatestMovReq 
+public class NewMovieRequest 
 {
 	private String description;
 	private String director;

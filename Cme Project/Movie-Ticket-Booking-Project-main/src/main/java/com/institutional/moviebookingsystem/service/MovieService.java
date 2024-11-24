@@ -1,11 +1,12 @@
-package com.cinema_package.cinema_project.service;
+package com.institutional.moviebookingsystem.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cinema_package.cinema_project.models.Prevbookhistory;
-import com.cinema_package.cinema_project.models.Movie;
-import com.cinema_package.cinema_project.models.LatestMovReq;
-import com.cinema_package.cinema_project.repository.MovieRepository;
+
+import com.institutional.moviebookingsystem.models.BookingHistory;
+import com.institutional.moviebookingsystem.models.Movie;
+import com.institutional.moviebookingsystem.models.NewMovieRequest;
+import com.institutional.moviebookingsystem.repository.MovieRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,21 +25,21 @@ public class MovieService implements IMService {
         List<Movie> filteredMovies = new ArrayList<>();
 
         for (Movie movie : movies) {
-            boolean identical = true;
+            boolean match = true;
 
             if (title != null && !movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                identical = false;
+                match = false;
             }
             if (date != null && !movie.getDate().isEqual(date)) {
-                identical = false;
+                match = false;
             }
             if (location != null && !movie.getLocation().toLowerCase().contains(location.toLowerCase())) {
-                identical = false;
+                match = false;
             }
             if (genre != null && !movie.getGenre().toLowerCase().contains(genre.toLowerCase())) {
-                identical = false;
+                match = false;
             }
-            if (identical) {
+            if (match) {
                 filteredMovies.add(movie);
             }
         }
@@ -74,9 +75,9 @@ public class MovieService implements IMService {
     
     
 	@Override
-    public List<Prevbookhistory> getBookingHistory() {
+    public List<BookingHistory> getBookingHistory() {
         List<Movie> movies = movieRepository.findAll();
-        List<Prevbookhistory> bookHistory = new ArrayList<>();
+        List<BookingHistory> bookingHistory = new ArrayList<>();
 
         for (Movie movie : movies) {
             int bookedTickets = movie.getTotalSeats() - movie.getAvailableSeats();
@@ -84,7 +85,7 @@ public class MovieService implements IMService {
             if (bookedTickets > 0) {
                 int totalPrice = bookedTickets * movie.getPrice();
 
-                Prevbookhistory booking = new Prevbookhistory();
+                BookingHistory booking = new BookingHistory();
                 booking.setId(movie.getId());
                 booking.setTitle(movie.getTitle());
                 booking.setDirector(movie.getDirector());
@@ -94,10 +95,10 @@ public class MovieService implements IMService {
                 booking.setLocation(movie.getLocation());
                 booking.setBookedTickets(bookedTickets);
                 booking.setTotalPrice(totalPrice);
-                bookHistory.add(booking);
+                bookingHistory.add(booking);
             }
         }
-        return bookHistory;
+        return bookingHistory;
     }
 
 
@@ -112,7 +113,7 @@ public class MovieService implements IMService {
 
         int availableSeats = movie.getAvailableSeats();
         if (tickets > availableSeats) {
-            throw new IllegalArgumentException("Seats Unavailable.");
+            throw new IllegalArgumentException("No seats available at this time.");
         }
 
         int calculatedTotalPrice = tickets * movie.getPrice();
@@ -132,7 +133,7 @@ public class MovieService implements IMService {
 	
 	
 	@Override
-    public void addMovie(LatestMovReq request) {
+    public void addMovie(NewMovieRequest request) {
         Movie movie = new Movie();
         movie.setDescription(request.getDescription());
         movie.setDirector(request.getDirector());
@@ -165,7 +166,7 @@ public class MovieService implements IMService {
     
     
 	@Override
-    public void updateMovie(Integer id, LatestMovReq request)
+    public void updateMovie(Integer id, NewMovieRequest request)
 	{
 
         Movie movie = movieRepository.findById(id)
