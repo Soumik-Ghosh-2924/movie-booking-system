@@ -15,7 +15,7 @@ Spring Boot,
 Spring Data JPA,
 Postman,
 PostgreSQL Database and
-Docker
+Docker - have created an image in Docker-Hub.
 
 
 # API Endpoints for Cinema Booking System
