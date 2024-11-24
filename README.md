@@ -164,4 +164,3 @@ The project is built using Java and Spring Boot framework.
 - **Error:** Appropriate HTTP status codes (e.g., `404 Not Found`, `400 Bad Request`).
 
 ---
-```
