@@ -1,4 +1,4 @@
-# Movie-Ticket-Booking-Project
+# Movie-Booking-System
 The project is built using Java and Spring Boot framework.
 
 ## Features
