@@ -1,13 +1,53 @@
 # Movie-Booking-System
 The project is built using Java and Spring Boot framework.
 
-## Features
-* Browse Movies: Users can view a list of available movies.
-* Search and Filter: Users can search for movies based on title, date, location, genre and movie ID.
-* Movie Details: Users can view detailed information about a specific movie, including title, director, description, genre, date, location, total seats, available seats, and price of ticket.
-* Booking Tickets: Users can book tickets for a movie by specifying the movie ID, quantity of tickets, and total price.
-* Booking History: Users can view their booking history, which includes details of movies they have booked, such as title, director, description, genre, date, location, booked tickets, and total price.
-* Add/Delete/Update Movies: Admin users can add new movies, delete existing movies, and update movie information.
+## Key Features
+
+### 🎥 **Movie Browsing**
+- Explore a curated list of movies available for viewing and booking.
+
+### 🔍 **Search and Filter**
+- Easily search for movies by:
+  - **Title**
+  - **Date**
+  - **Location**
+  - **Genre**
+  - **Movie ID**
+
+### 📄 **Detailed Movie Information**
+- Access comprehensive details for each movie, including:
+  - **Title**  
+  - **Director**  
+  - **Description**  
+  - **Genre**  
+  - **Release Date**  
+  - **Location**  
+  - **Total Seats**  
+  - **Available Seats**  
+  - **Ticket Price**
+
+### 🎟️ **Ticket Booking**
+- Seamlessly book tickets by:
+  - Providing the **Movie ID**
+  - Specifying the **Number of Tickets**
+  - Viewing the **Total Price**
+
+### 📜 **Booking History**
+- Review your booking history with details for each movie, including:
+  - **Title**  
+  - **Director**  
+  - **Description**  
+  - **Genre**  
+  - **Date**  
+  - **Location**  
+  - **Tickets Booked**  
+  - **Total Price**
+
+### 🛠️ **Admin Controls**
+- Admin users have additional privileges to:
+  - **Add New Movies**
+  - **Update Movie Information**
+  - **Delete Existing Movies**
 
 ## Technologies
 * Java,
