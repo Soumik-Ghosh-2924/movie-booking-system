@@ -10,12 +10,12 @@ The project is built using Java and Spring Boot framework.
 * Add/Delete/Update Movies: Admin users can add new movies, delete existing movies, and update movie information.
 
 ## Technologies
-Java,
-Spring Boot,
-Spring Data JPA,
-Postman,
-PostgreSQL Database and
-Docker - have created an image in Docker-Hub.
+* Java,
+* Spring Boot,
+* Spring Data JPA,
+* Postman,
+* PostgreSQL Database and
+* Docker - have created an image in Docker-Hub.
 
 
 # API Endpoints for Cinema Booking System
