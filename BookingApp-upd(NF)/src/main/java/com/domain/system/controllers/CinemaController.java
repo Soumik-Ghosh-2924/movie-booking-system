@@ -36,7 +36,11 @@ public class CinemaController
 			@RequestParam(required= false) @DateTimeFormat(iso=DateTimeFormat.ISO.DATE) LocalDate date)
 	{
 		
+		System.out.println();
+		System.out.println();
 		System.out.println("Here's the list of all the movies !");
+		System.out.println();
+		System.out.println();
 		
 		return cinemaService.getAllCinema(title, genre,location,date);
 	}
@@ -46,8 +50,11 @@ public class CinemaController
 	@GetMapping("/cinema/{id}")
 	public Cinema getCinemaById(@PathVariable Integer id)
 	{
+		System.out.println();
+		System.out.println();
 		System.out.println("Here's your requested Cinema!");
-		
+		System.out.println();
+		System.out.println();
 		return cinemaService.getCinemaById(id);
 	}
 	
@@ -57,9 +64,11 @@ public class CinemaController
 	@GetMapping("/cinema/booking/history")
     public List<CinemaBookingHistory> getBookingHistory()
 	{
-    	
+		System.out.println();
+		System.out.println();
     	System.out.println("Here's your booking history");
-    	
+    	System.out.println();
+    	System.out.println();
         return cinemaService.getBookingHistory();
     }
 	
@@ -70,8 +79,11 @@ public class CinemaController
 	public String addCinema(@RequestBody NewCinemaReq cinema)
 	{
 		cinemaService.addCinema(cinema);
-		
-		System.out.println("New Cinema has been added !");		
+		System.out.println();
+		System.out.println();
+		System.out.println("New Cinema has been added !");
+		System.out.println();
+		System.out.println();
 		return "New Cinema has been added !";
 		
 	}
@@ -87,7 +99,11 @@ public class CinemaController
             @PathVariable int totalPrice
     ) 
 	{
+		System.out.println();
+		System.out.println();
 		System.out.println("Your booking is done. ");
+		System.out.println();
+		System.out.println();
         cinemaService.bookTickets(id, quantity, totalPrice);
         return "Your booking is done.";
     }
@@ -98,10 +114,14 @@ public class CinemaController
 	
 	
 	@DeleteMapping("/cinema/{id}")
-    public String deleteCinema(@PathVariable Integer id) {
-		
+    public String deleteCinema(@PathVariable Integer id) 
+	{
+		System.out.println();
+		System.out.println();
 		System.out.println("Deleted the movie.");
-        cinemaService.deleteCinema(id);
+		System.out.println();
+		System.out.println();
+		cinemaService.deleteCinema(id);
         return "Deleted the Movie.";
     }
 	
@@ -114,7 +134,11 @@ public class CinemaController
 	public String  updateCinema(@PathVariable Integer id, @RequestBody NewCinemaReq request)
 	{
 		cinemaService.updateCinema(id, request);
+		System.out.println();
+		System.out.println();
 		System.out.println("The Cinema details have been udated. ");
+		System.out.println();
+		System.out.println();
 		return "The Cinema details have been udated.";
 		
 	}	

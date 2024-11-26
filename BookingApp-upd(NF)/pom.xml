@@ -65,7 +65,7 @@
 	            <version>3.4.1</version> <!-- Use the latest version -->
 	            <configuration>
 	                <to>
-	                    <image>registry.hub.docker.com/dockersg6/booking-system-arti2-img</image> <!-- Replace with your image name -->
+	                    <image>registry.hub.docker.com/dockersg6/booking-system-img1</image> <!-- Replace with your image name -->
 	                </to>
 	            </configuration>
         	</plugin>
