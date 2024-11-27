@@ -1,8 +1,0 @@
-com\institutional\moviebookingsystem\models\Movie.class
-com\institutional\moviebookingsystem\service\MovieService.class
-com\institutional\moviebookingsystem\models\BookingHistory.class
-com\institutional\moviebookingsystem\repository\MovieRepository.class
-com\institutional\moviebookingsystem\service\IMService.class
-com\institutional\moviebookingsystem\CinemaProjectApplication.class
-com\institutional\moviebookingsystem\models\NewMovieRequest.class
-com\institutional\moviebookingsystem\controller\MovieController.class
